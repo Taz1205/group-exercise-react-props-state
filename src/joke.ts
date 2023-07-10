@@ -1,4 +1,4 @@
 export default interface Joke {
-    id: number;
-    joke: string;
+  id: number;
+  joke: string;
 }
