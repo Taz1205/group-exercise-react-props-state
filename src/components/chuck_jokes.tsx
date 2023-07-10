@@ -1,3 +1,5 @@
+// ChuckJokes.tsx
+import React from "react";
 import Joke from "../joke";
 
 interface ChuckJokesProps {
@@ -5,7 +7,7 @@ interface ChuckJokesProps {
 }
 
 const ChuckJokes: React.FC<ChuckJokesProps> = ({ joke }) => {
-  return <p>{joke.joke}</p>;
+  return <>{joke.joke}</>;
 };
 
 export default ChuckJokes;
