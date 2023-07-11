@@ -31,14 +31,33 @@ function App() {
   ]);
 
   const filteredJokes = jokes.filter((joke) => joke.id === 3);
+  const newJoke = {
+    id: 5,
+    joke: "Aliens are real. They are just hiding from Chuck Norris.",
+  };
 
   return (
     <div className="App">
       <h1>React props and state</h1>
       <ChuckCard greeting={chuckGreeting} />
+      <br />
+      <button onClick={() => setChuckGreeting("Chuck Norris greets again!!!")}>
+        Change Greeting
+      </button>
 
       <h2>Chuck Info: </h2>
       <ChuckInfo whalesSaved={whalesSaved} roundHouseKicks={roundHouseKicks} />
+      <button onClick={() => setWhalesSaved(whalesSaved + 1)}>
+        Save a Whale
+      </button>
+      <br />
+      <button
+        onClick={() =>
+          setRoundHouseKicks((prevRoundHouseKicks) => prevRoundHouseKicks + 10)
+        }
+      >
+        Add 10 Round House Kicks
+      </button>
 
       <h2>Jokes: </h2>
       <ol>
@@ -48,6 +67,9 @@ function App() {
           </li>
         ))}
       </ol>
+      <button onClick={() => setJokes((prevJokes) => [...prevJokes, newJoke])}>
+        Add Joke
+      </button>
       <h2>Filtered Jokes: </h2>
       <ol>
         {filteredJokes.map((joke: Joke) => (
