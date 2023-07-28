@@ -60,9 +60,10 @@ function App() {
       </button>
 
       <h2>Jokes: </h2>
+
       <ol>
-        {jokes.map((joke: Joke) => (
-          <li key={joke.id}>
+        {jokes.map((joke: Joke, index: number) => (
+          <li key={index}>
             <ChuckJokes joke={joke} />
           </li>
         ))}
@@ -70,10 +71,10 @@ function App() {
       <button onClick={() => setJokes((prevJokes) => [...prevJokes, newJoke])}>
         Add Joke
       </button>
-      <h2>Filtered Jokes: </h2>
+
       <ol>
-        {filteredJokes.map((joke: Joke) => (
-          <li key={joke.id}>
+        {filteredJokes.map((joke: Joke, index: number) => (
+          <li key={index}>
             <ChuckJokes joke={joke} />
           </li>
         ))}
